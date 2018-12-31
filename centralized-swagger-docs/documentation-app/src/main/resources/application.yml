@@ -1,17 +1,16 @@
 server:
   port: 9093
   
- 
-eureka:
-  instance:
-    appname: documentation-application
-  client:
-    enabled: true
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: documentation-application    
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: 40.85.215.6
+      port: 8500
       
 swagger: 
   config: 
-    refreshrate: 5000
+    refreshrate: 5000      
